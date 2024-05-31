@@ -5,8 +5,14 @@ Create a logical model for a small bookstore. 📚
 
 At the minimum it should have employee, order, sales, customer, and book entities (tables). Determine sensible column and table design based on what you know about these concepts. Keep it simple, but work out sensible relationships to keep tables reasonably sized. Include a date table. There are several tools online you can use, I'd recommend [_Draw.io_](https://www.drawio.com/) or [_LucidChart_](https://www.lucidchart.com/pages/).
 
+![image](https://github.com/pamwang86/sql/assets/167114433/a2b949bc-a5f2-4e75-8852-2cbe6e12c7c3)
+
+
 ## Question 2
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
+
+![image](https://github.com/pamwang86/sql/assets/167114433/501beda2-cb98-447e-afc5-ef372b5b7013)
+
 
 ## Question 3
 The store wants to keep customer addresses. Propose two architectures for the CUSTOMER_ADDRESS table, one that will retain changes, and another that will overwrite. Which is type 1, which is type 2?
@@ -18,6 +24,16 @@ Bonus: Are there privacy implications to this, why or why not?
 Your answer...
 ```
 
+![image](https://github.com/pamwang86/sql/assets/167114433/ee637884-1500-4b51-b992-2a0eda5cfeac)
+
+Type1,any updates on address will replace to old one.											
+Type2, when update the address will add a record of effective end date, all the historical address will retain in the database											
+											
+Privacy Implication:											
+There are potential privacy implications to consider for Type 2. Address is sensitive data for anyone; if there are any lapses or unauthorized parties using historical addresses, it could be harmful to protect customers' privacy.											
+
+
+
 ## Question 4
 Review the AdventureWorks Schema [here](https://i.stack.imgur.com/LMu4W.gif)
 
@@ -25,6 +41,9 @@ Highlight at least two differences between it and your ERD. Would you change any
 ```
 Your answer...
 ```
+There is a sales order header table in the AdventureWorks schema that stores the order date and status. I don't have this table in my ERD, but I would like to add it.
+
+Additionally, there is a table called 'location' in the AdventureWorks schema that I don't have. I believe it is essential to include for a bookstore to search the location of the book.
 
 # Criteria
 
